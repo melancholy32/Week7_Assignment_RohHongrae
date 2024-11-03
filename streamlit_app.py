@@ -14,7 +14,7 @@ st.title("💬 Chatbot for your flight experience")
 st.write("Please share with us your experience of the latest trip. Your feedback is really important for us.")
 feedback = st.text_area("Share with us your experience of the latest trip.")
 
-openai_api_key = "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"
+openai_api_key = "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"
 llm = ChatOpenAI(openai_api_key=openai_api_key)
 
 def internal_negative_response(feedback):
