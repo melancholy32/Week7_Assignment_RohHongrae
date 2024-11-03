@@ -8,6 +8,8 @@ st.title("💬 Chatbot for your flight experience")
 st.write("Please share with us your experience of the latest trip. Your feedback is really important for us.")
 feedback = st.text_area("Share with us your experience of the latest trip.")
 
+# from google.colab import userdata
+# openai_api_key = userdata.get('MyOpenAIKey')
 openai_api_key = "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"
 
 llm = ChatOpenAI(openai_api_key=openai_api_key)
