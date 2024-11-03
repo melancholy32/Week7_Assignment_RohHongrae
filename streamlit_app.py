@@ -6,9 +6,6 @@ from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain_core.runnables.branch import RunnableBranch
-import streamlit as st
-from langchain.chat_models import ChatOpenAI
-from langchain_core.runnables.branch import RunnableBranch
 
 st.title("💬 Chatbot for your flight experience")
 st.write("Please share with us your experience of the latest trip. Your feedback is really important for us.")
