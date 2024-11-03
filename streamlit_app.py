@@ -27,8 +27,7 @@ branch = RunnableBranch(
     (internal_negative_condition, internal_negative_response),
     (external_negative_condition, external_negative_response),
     (positive_condition, positive_response),
-    lambda feedback: "Thank you for your feedback. We'll make sure to improve for your next flight."  # Default branch
-)
+    lambda feedback: "Thank you for your feedback. We'll make sure to improve for your next flight.")
 
 def process_feedback(feedback):
     response = branch.invoke(feedback)
