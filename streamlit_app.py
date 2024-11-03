@@ -21,7 +21,7 @@ llm = ChatOpenAI(openai_api_key=openai_api_key)
 # Show title and description.
 st.title(" Chatbot for your experience")
 st.write(
-    "Please share your experience with our flight and service. Your feedback is really important for us to improve for your next journey."
+    "Please share your experience with our flight and service. \Your feedback is really important for us to improve for your next journey."
 )
 
 #OpenAI API Key
