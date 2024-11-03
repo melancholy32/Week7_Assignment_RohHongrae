@@ -7,13 +7,6 @@ from langchain_core.runnables.branch import RunnableBranch
 st.title("💬Chatbot for your flight experience")
 st.write("Please share with us your experience of the latest trip. Your feedback is really important for us.")
 feedback = st.text_area("Share with us your experience of the latest trip.")
-
-def process_feedback(feedback):
-    response = branch.invoke(feedback)
-    st.write(response)
-
-if st.button("Submit"):
-  process_feedback(feedback)
   
 openai_api_key = "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"
 
@@ -39,3 +32,10 @@ branch = RunnableBranch(
     (positive_condition, positive_response),
     lambda feedback: "Thank you for your feedback. We'll make sure to improve for your next flight."  # Default branch
 )
+
+def process_feedback(feedback):
+    response = branch.invoke(feedback)
+    st.write(response)
+
+if st.button("Submit"):
+  process_feedback(feedback)
