@@ -3,15 +3,15 @@
 
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
+from langchain_core.runnables.branch import RunnableBranch
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.output_parser import StrOutputParser
-from langchain_core.runnables.branch import RunnableBranch
 
 st.title("💬 Chatbot for your flight experience")
 st.write("Please share with us your experience of the latest trip. Your feedback is really important for us.")
 feedback = st.text_area("Share with us your experience of the latest trip.")
 
-openai_api_key = st.secrets["openai"]["api_key"]
+openai_api_key = st.secrets["api_key"]
 llm = ChatOpenAI(openai_api_key=openai_api_key)
 
 def internal_negative_response(feedback):
