@@ -1,3 +1,6 @@
+# Streamlit URL: https://rohhongrae-week7.streamlit.app/
+# Github URL: https://github.com/melancholy32/Week7_Assignment_RohHongrae
+
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
