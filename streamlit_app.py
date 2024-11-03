@@ -1,8 +1,25 @@
 import streamlit as st
-from openai import OpenAI
+from langchain.chat_models import ChatOpenAI
+from langchain.prompts import ChatPromptTemplate
+from langchain.schema.output_parser import StrOutputParser
+from langchain_core.runnables.branch import RunnableBranch
+
+st.title("💬Chatbot for your flight experience")
+feedback = st.text_area("Share with us your experience of the latest trip.")
+
+if st.button("Submit"):
+  process_feedback(feedback)
+
+  
+### Get the OpenAI API key
+from google.colab import userdata
+openai_api_key = userdata.get('MyOpenAIKey')
+
+### Create a ChatOpenAI object
+llm = ChatOpenAI(openai_api_key=openai_api_key)
 
 # Show title and description.
-st.title("💬 Chatbot for your experience")
+st.title(" Chatbot for your experience")
 st.write(
     "Please share your experience with our flight and service. Your feedback is really important for us to improve for your next journey."
 )
