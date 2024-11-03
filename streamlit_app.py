@@ -35,5 +35,3 @@ def process_feedback(feedback):
 
 if st.button("Submit"):
     process_feedback(feedback)
-if st.button("Submit"):
-  process_feedback(feedback)
