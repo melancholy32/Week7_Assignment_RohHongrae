@@ -15,7 +15,6 @@ st.write("Please share with us your experience of the latest trip. Your feedback
 feedback = st.text_area("Share with us your experience of the latest trip.")
 
 openai_api_key = st.secrets["openai"]["api_key"]
-
 llm = ChatOpenAI(openai_api_key=openai_api_key)
 
 def internal_negative_response(feedback):
