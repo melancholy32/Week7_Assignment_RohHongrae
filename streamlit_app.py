@@ -2,17 +2,22 @@ import streamlit as st
 from openai import OpenAI
 
 # Show title and description.
-st.title("💬 Chatbot")
+st.title("💬 Chatbot for your experience")
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
+    "Please share your experience with our flight and service. Your feedback is really important for us to improve for your next journey."
 )
 
-# Ask user for their OpenAI API key via `st.text_input`.
-# Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
-# via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
-openai_api_key = st.text_input("OpenAI API Key", type="password")
+#OpenAI API Key
+from langchain.chat_models import ChatOpenAI
+
+### Get the OpenAI API key
+from google.colab import userdata
+openai_api_key = userdata.get('MyOpenAIKey')
+
+### Create a ChatOpenAI object
+chat = ChatOpenAI(openai_api_key=openai_api_key)
+
+
 if not openai_api_key:
     st.info("Please add your OpenAI API key to continue.", icon="🗝️")
 else:
